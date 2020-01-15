@@ -1,0 +1,48 @@
+{
+    "name": "Todo",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "priority",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "done",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "expirydate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "person",
+            "otherEntityRelationshipName": "todo",
+            "relationshipName": "person",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "todoList",
+            "otherEntityRelationshipName": "todo",
+            "relationshipName": "todoList",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200115141635",
+    "entityTableName": "todo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

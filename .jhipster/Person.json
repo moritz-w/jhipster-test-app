@@ -1,0 +1,39 @@
+{
+    "name": "Person",
+    "fields": [
+        {
+            "fieldName": "firstname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastname",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "todo",
+            "otherEntityRelationshipName": "person",
+            "relationshipName": "todo",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "team",
+            "otherEntityRelationshipName": "person",
+            "relationshipName": "team",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200115141634",
+    "entityTableName": "person",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

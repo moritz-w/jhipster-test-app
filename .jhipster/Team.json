@@ -1,0 +1,35 @@
+{
+    "name": "Team",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "person",
+            "otherEntityRelationshipName": "team",
+            "relationshipName": "person"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "todoList",
+            "otherEntityRelationshipName": "team",
+            "relationshipName": "todoList",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200115141637",
+    "entityTableName": "team",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

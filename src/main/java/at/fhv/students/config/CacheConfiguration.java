@@ -42,6 +42,14 @@ public class CacheConfiguration {
             createCache(cm, at.fhv.students.domain.User.class.getName());
             createCache(cm, at.fhv.students.domain.Authority.class.getName());
             createCache(cm, at.fhv.students.domain.User.class.getName() + ".authorities");
+            createCache(cm, at.fhv.students.domain.Person.class.getName());
+            createCache(cm, at.fhv.students.domain.Todo.class.getName());
+            createCache(cm, at.fhv.students.domain.TodoList.class.getName());
+            createCache(cm, at.fhv.students.domain.TodoList.class.getName() + ".todos");
+            createCache(cm, at.fhv.students.domain.TodoList.class.getName() + ".teams");
+            createCache(cm, at.fhv.students.domain.Team.class.getName());
+            createCache(cm, at.fhv.students.domain.Team.class.getName() + ".people");
+            createCache(cm, at.fhv.students.domain.Team.class.getName() + ".todoLists");
             // jhipster-needle-ehcache-add-entry
         };
     }

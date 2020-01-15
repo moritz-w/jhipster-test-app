@@ -8,6 +8,18 @@ import { NavDropdown } from './menu-components';
 
 export const EntitiesMenu = props => (
   <NavDropdown icon="th-list" name="Entities" id="entity-menu">
+    <MenuItem icon="asterisk" to="/person">
+      Person
+    </MenuItem>
+    <MenuItem icon="asterisk" to="/todo">
+      Todo
+    </MenuItem>
+    <MenuItem icon="asterisk" to="/todo-list">
+      Todo List
+    </MenuItem>
+    <MenuItem icon="asterisk" to="/team">
+      Team
+    </MenuItem>
     {/* jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here */}
   </NavDropdown>
 );

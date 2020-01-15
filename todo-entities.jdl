@@ -1,0 +1,38 @@
+entity Person {
+	firstname String
+    lastname String
+}
+
+entity Todo {
+	name String
+    priority Integer
+    done Boolean
+    expirydate LocalDate
+}
+
+entity TodoList {
+	name String
+	done Boolean
+    expirydate LocalDate
+}
+
+entity Team {
+	name String
+}
+
+relationship OneToOne {
+	Todo to Person
+}
+
+relationship OneToMany {
+	Team to Person
+    TodoList to Todo
+}
+
+relationship ManyToMany {
+	Team to TodoList
+}
+
+
+
+
