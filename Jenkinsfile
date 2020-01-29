@@ -50,6 +50,8 @@ node {
         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
     stage('quality analysis') {
-        sh "./mvnw -ntp initialize sonar:sonar"
+        withSonarQubeEnv('sonar') {
+            sh "./mvnw -ntp initialize sonar:sonar"
+        }
     }
 }
