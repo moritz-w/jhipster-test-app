@@ -91,6 +91,11 @@
         <junit.utReportFolder>${project.testresult.directory}/test</junit.utReportFolder>
         <junit.itReportFolder>${project.testresult.directory}/integrationTest</junit.itReportFolder>
         <!-- jhipster-needle-maven-property -->
+        <!-- Sonarcloud props -->
+        <sonar.projectKey>moritz-w_jhipster-test-app</sonar.projectKey>
+        <sonar.organization>moritz-w</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.login>5cf080a6ab9720b041c011a430c1780ab7987b7f</sonar.login>
     </properties>
 
     <dependencyManagement>
