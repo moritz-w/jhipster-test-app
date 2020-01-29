@@ -50,6 +50,6 @@ node {
         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
     stage('quality analysis') {
-        sh './mvnw verify sonar:sonar'
+        sh "./mvnw -ntp initialize sonar:sonar"
     }
 }
