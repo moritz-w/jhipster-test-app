@@ -25,25 +25,25 @@ node {
         sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm"
     }
 
-    stage('backend tests') {
-        try {
-            sh "./mvnw -ntp verify"
-        } catch(err) {
-            throw err
-        } finally {
-            junit '**/target/test-results/**/TEST-*.xml'
-        }
-    }
-
-    stage('frontend tests') {
-        try {
-            sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm -Dfrontend.npm.arguments='run test-ci'"
-        } catch(err) {
-            throw err
-        } finally {
-            junit '**/target/test-results/**/TEST-*.xml'
-        }
-    }
+//    stage('backend tests') {
+//        try {
+//            sh "./mvnw -ntp verify"
+//        } catch(err) {
+//            throw err
+//        } finally {
+//            junit '**/target/test-results/**/TEST-*.xml'
+//        }
+//    }
+//
+//    stage('frontend tests') {
+//        try {
+//            sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm -Dfrontend.npm.arguments='run test-ci'"
+//        } catch(err) {
+//            throw err
+//        } finally {
+//            junit '**/target/test-results/**/TEST-*.xml'
+//        }
+//    }
 
     stage('packaging') {
         sh "./mvnw -ntp verify -Pprod -DskipTests"
