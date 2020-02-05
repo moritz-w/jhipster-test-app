@@ -57,6 +57,6 @@ node {
    }
    
    stage('deploy'){
-       sh "heroku deploy:jar target/*.jar --name jhipster-todo-app"
+       sh "heroku deploy:jar target/*.jar -a jhipster-todo-app"
    }
 }
