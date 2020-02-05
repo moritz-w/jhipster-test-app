@@ -44,17 +44,19 @@ node {
            junit '**/target/test-results/**/TEST-*.xml'
        }
    }
+   
+   stage('quality analysis') {
+       withSonarQubeEnv('sonar') {
+           sh "mvn sonar:sonar"
+       }
+   }
 
-    stage('packaging') {
-        sh "./mvnw -ntp verify -Pprod -DskipTests"
-        archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
-    }
-    stage('quality analysis') {
-        withSonarQubeEnv('sonar') {
-            sh "mvn sonar:sonar"
-        }
-    }
-    stage('deploy'){
-        sh "heroku deploy:jar target/*.jar"
-    }
+   stage('packaging') {
+       sh "./mvnw -ntp verify -Pprod,heroku -DskipTests"
+       archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+   }
+   
+   stage('deploy'){
+       sh "heroku deploy:jar target/*.jar --name jhipster-todo-app"
+   }
 }
