@@ -35,6 +35,8 @@
     "dtoSuffix": "DTO",
     "otherModules": [],
     "enableTranslation": false,
-    "blueprints": []
+    "blueprints": [],
+    "herokuAppName": "jhipster-todo-app",
+    "herokuDeployType": "jar"
   }
 }
